@@ -1,8 +1,13 @@
 import React from 'react'
+import Faqs from '../components/Home/Faqs'
+import GlassMorphism from '../components/Home/GlassMorphism'
 
 function Home() {
   return (
-    <div>Home</div>
+    <div>
+    <GlassMorphism/>
+    <Faqs/>
+    </div>
   )
 }
 

@@ -17,21 +17,21 @@ function Footer() {
           >
             
               <div style={{width:'2rem',height:'2rem',paddingLeft:'10px'}} >
-              <a target="_blank" href="https://facebook.com/">
+              <a target="_blank" href="https://facebook.com/" rel="noreferrer">
             <Facebook/>
               </a>
               </div>
           </button>
           <button class="bg-white text-white shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
               <div style={{width:'2rem',height:'2rem'}} >
-              <a target="_blank" href="https://github.com/">                
+              <a target="_blank" href="https://github.com/" rel="noreferrer">                
             <Github/>
             </a>
               </div>
           </button>
           <button class="bg-white text-white shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
               <div style={{width:'2rem',height:'2rem'}}>
-              <a target="_blank" href="https://twitter.com/">                
+              <a target="_blank" href="https://twitter.com/" rel="noreferrer">                
             <Twitter/>
             </a>
             </div>
