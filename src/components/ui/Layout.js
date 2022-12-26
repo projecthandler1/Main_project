@@ -1,15 +1,12 @@
 import React from 'react'
 import NavBar from './NavBar'
 import Footer from './Footer'
-function Layout({children}) {
+import SnackBar from './SnackBar'
+function Layout({children,snackBar,message,color}) {
   return (
    <>
         <NavBar/>
-      <div
-        style={{
-          marginBottom:"4rem"
-        }}
-     / >
+        {snackBar&&<SnackBar color={color} message={message}/>}
         <main>{children}</main>
           <Footer/>
    </>
