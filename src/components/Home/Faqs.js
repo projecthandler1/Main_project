@@ -12,31 +12,30 @@ function Faqs() {
     ]
     return (
         <>
-   <div className='heading flex items-center justify-center my-10' >
+   <div className='heading flex items-center justify-center my-10'>
     <h1 className='font-bold text-2xl'>Frequently Asked Questions</h1>
     </div>
-   <div className='heading flex flex-col items-center justify-center my-10 ' id='faqs'>
+   <div className='heading flex flex-col items-center justify-center my-10 '>
 
     {Faqs.map((faqs,i)=>(
-        
-        <div className='shadow rounded border border-gray-100 border-t-0 md:w-4/6 w-5/6 ' key={i}
-        onClick={()=>setExpand({...expand,[i]:!expand[i]})}>
-        <div className='p-4 text-base sm:text-xl relative font-bold'>
+
+        <div className='shadow rounded border border-gray-100 border-t-0 w-4/6'>
+        <div className='p-4 text-xl relative font-medium'>
             <div className='w-5/6'>
             {faqs.question}                
         </div>
         <button aria-label='question-expander'
         className='text-xl absolute top-0 right-0 p-4 focus:outline-none'
         onClick={()=>setExpand({...expand,[i]:!expand[i]})}>
-            {expand[i]?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-</svg>:<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            {expand[i]?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+</svg>:<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
 </svg>
 }
         </button>
         </div>
-        <div className={`${expand[i]?`show p-4 pt-${(i===1||i===2)?'20':'10'}`:'hide p-4 pt-0'}  md:pt-5` }>
+        <div className={`${expand[i]?'show':'hide'} p-4 ` }>
         {faqs.answer}
     </div>
     </div>

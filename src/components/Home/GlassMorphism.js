@@ -10,7 +10,7 @@ function GlassMorphism() {
     <div className='main_container'>
    <div className='container_1'>
     {content.map((content,i)=>(
-      <div className='card' key={i}>
+      <div className='card'>
     <div className='box'>
     <div className='content'>
       <h2>{i+1}</h2>
