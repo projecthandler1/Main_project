@@ -1,20 +1,18 @@
 import React from "react";
-import { useState } from "react";
 // import image_car from "./image_car.jpg";
 import "./Sender.css";
 
-var data = require("./tbl_state.json");
+var data = require("../../data/tbl_state.json");
 // var data = require("./tbl_country.json");
-function State() {
-  const [value, setValue] = useState("");
+function State({value,setValue}) {
   const onChange = (event) => {
     setValue(event.target.value);
   };
   const onSearch = (searchTerm) => {
     setValue(searchTerm);
     // our api to fetch the search result
-    console.log("search ", searchTerm);
   };
+  
   return (
     <>
        <div>
@@ -27,17 +25,17 @@ function State() {
           />
           <div className="dropdown">
             {data
-              .filter((item) => {
+              .filter((item,index) => {
                 const searchTerm = value.toLowerCase();
                 const fullName = item.state_name.toLowerCase();
 
                 return (
                   searchTerm &&
                   fullName.startsWith(searchTerm) &&
-                  fullName !== searchTerm
-                );
-              })
-              .slice(0, 3)
+                  fullName !== searchTerm&&
+                  data.indexOf(item)===index
+                );  
+              }).slice(0, 3)
               .map((item) => (
                 <div
                   onClick={() => onSearch(item.state_name)}

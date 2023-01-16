@@ -29,6 +29,9 @@ function Contact({setSnackBar,setColor,setMessage}) {
     setColor('red')
     setMessage('Some Error Occurs!')
     });
+    setTimeout(() => {
+      setSnackBar(false)
+    }, 10000);
   }
     const validateHelper=(field)=>{
       const value=document.getElementById(field).value
@@ -48,27 +51,27 @@ function Contact({setSnackBar,setColor,setMessage}) {
         <label htmlFor="email" className="leading-7 text-sm text-gray-600">Email</label>
         <input type="email" id="email" name="email" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" placeholder='xyz@gmail.com'
         onBlur={()=>{validateHelper('email')}}/>
-         {errors.email?<span class="text-sm text-red-600"> The Email you entered is invalid,Pls check! </span>:null}
+         {errors.email?<span className="text-sm text-red-600"> The Email you entered is invalid,Pls check! </span>:null}
       </div>
       <div className="relative mb-4">
         <label htmlFor="phoneNo" className="leading-7 text-sm text-gray-600">Phone Number</label>
         <input type="phone" id="phone" name="phone" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" placeholder='9998887766'
         onBlur={()=>{validateHelper('phone')}}/>
-         {errors.phone?<span class="text-sm text-red-600"> The Number you entered is invalid,Pls check! </span>:null}
+         {errors.phone?<span className="text-sm text-red-600"> The Number you entered is invalid,Pls check! </span>:null}
 
       </div>
       <div className="relative mb-4">
         <label htmlFor="message" className="leading-7 text-sm text-gray-600">Message</label>
         <textarea id="message" name="message" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" placeholder='Message'
         onBlur={()=>{validateHelper('message')}}></textarea>
-         {errors.message?<span class="text-sm text-red-600"> Invalid message,Pls check! </span>:null}
+         {errors.message?<span className="text-sm text-red-600"> Invalid message,Pls check! </span>:null}
 
       </div>
       
       <button className={`text-white ${disabled?'bg-gray-500':'bg-indigo-500'} border-0 py-2 px-6 focus:outline-none hover:${disabled?'bg-gray-700':'bg-indigo-700'} rounded text-lg`}  onClick={()=>{sendMessage()}}
- disabled={disabled}>{isLoading?(<div class="flex items-center justify-center">
- <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
-   <span class="visually-hidden">Loading...</span>
+ disabled={disabled}>{isLoading?(<div className="flex items-center justify-center">
+ <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
+   <span className="visually-hidden">Loading...</span>
  </div>
 </div>):(<div>Send Message</div>)}</button>
       

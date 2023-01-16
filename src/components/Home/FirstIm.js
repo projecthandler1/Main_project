@@ -1,4 +1,3 @@
-import react from 'react';
 import Typed from 'react-typed';
 
 function FirstIm(){

@@ -24,7 +24,7 @@
     display: flex;
   }
   .Sender{
-    background-image: url(/src/components/Home/image_car.jpg);
+    background-image: url(/src/images/image_car.jpg);
     background-size: 60%;
     background-repeat: no-repeat;
     min-height: 70vh;
